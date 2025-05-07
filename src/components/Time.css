@@ -1,0 +1,292 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0b0c2a;
+    color: #f5f5f5;
+  }
+  
+  .time-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    overflow: hidden;
+    background: linear-gradient(145deg, #0d0f23, #11142e);
+    animation: gradientShift 12s ease infinite;
+  }
+  
+  .magic-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, #00f7ff11, transparent 70%);
+    filter: blur(140px);
+    z-index: 1;
+    animation: pulseBlur 6s ease-in-out infinite;
+  }
+  
+  .magic-logo {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 160px;
+    transform: translateX(-50%);
+    z-index: 3;
+    opacity: 0;
+    animation: logoAppear 1.5s ease-out forwards, logoPulse 4s infinite ease-in-out;
+  }
+  
+  .timer-box {
+    background: rgba(21, 22, 43, 0.9);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 8px 24px rgba(0, 255, 255, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    animation: appearFade 1.2s ease;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+    color: #00f7ff;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .countdown {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f0f0f0;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 8px #00f7ff99;
+  }
+  
+  .magic-button {
+    background-color: transparent;
+    border: 2px solid #00e6e6;
+    color: #00e6e6;
+    padding: 12px 26px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .magic-button::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #00e6e633 10%, transparent 70%);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .magic-button:hover {
+    background-color: #00e6e6;
+    color: #0a0a23;
+    box-shadow: 0 0 12px #00e6e6;
+  }
+  
+  .magic-button:hover::after {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+  
+  .completion-message {
+    z-index: 3;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .completion-message h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 0 10px #f770c7;
+  }
+  
+  .completion-message p {
+    font-size: 1rem;
+    color: #b0becf;
+  }
+  
+  /* Partículas mágicas flotantes */
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: floatParticle linear infinite;
+    z-index: 0;
+  }
+  
+  .particle:nth-child(2) {
+    width: 4px; height: 4px;
+    background-color: #00f7ff;
+    top: 60%; left: 20%;
+    animation-duration: 12s;
+  }
+  .particle:nth-child(3) {
+    width: 6px; height: 6px;
+    background-color: #ff00ff;
+    top: 80%; left: 10%;
+    animation-duration: 10s;
+  }
+  .particle:nth-child(4) {
+    width: 8px; height: 8px;
+    background-color: #b084f7;
+    top: 90%; left: 70%;
+    animation-duration: 16s;
+  }
+  .particle:nth-child(5) {
+    width: 3px; height: 3px;
+    background-color: #00e6e6;
+    top: 95%; left: 50%;
+    animation-duration: 9s;
+  }
+  .particle:nth-child(6) {
+    width: 10px; height: 10px;
+    background-color: #7efff5;
+    top: 100%; left: 80%;
+    animation-duration: 14s;
+  }
+  .particle:nth-child(7) {
+    width: 12px; height: 12px;
+    background-color: #ff00ff;
+    top: 98%; left: 35%;
+    animation-duration: 11s;
+  }
+  .particle:nth-child(8) {
+    width: 5px; height: 5px;
+    background-color: #00f7ff;
+    top: 85%; left: 60%;
+    animation-duration: 13s;
+  }
+  .date-info {
+    font-size: 0.95rem;
+    color: #d1d1e9;
+    margin-bottom: 1.8rem;
+    font-weight: 400;
+    opacity: 0.85;
+  }
+  
+  /* Animaciones */
+  @keyframes floatParticle {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-120vh) scale(1.2);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes logoAppear {
+    from { opacity: 0; transform: translate(-50%, -20px) scale(0.8); }
+    to { opacity: 1; transform: translate(-50%, 0) scale(1); }
+  }
+  
+  @keyframes logoPulse {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.05); }
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes appearFade {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  @keyframes pulseBlur {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* === VERSIONES RESPONSIVE === */
+
+@media (max-width: 768px) {
+    .timer-box {
+      padding: 2rem 1.5rem;
+      max-width: 90%;
+      border-radius: 16px;
+    }
+  
+    .title {
+      font-size: 1.8rem;
+    }
+  
+    .countdown {
+      font-size: 1.6rem;
+    }
+  
+    .magic-button {
+      font-size: 0.95rem;
+      padding: 10px 20px;
+    }
+  
+    .completion-message h2 {
+      font-size: 1.6rem;
+    }
+  
+    .completion-message p {
+      font-size: 0.9rem;
+    }
+  
+    .magic-logo {
+      width: 110px;
+      top: 30px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .timer-box {
+      padding: 1.5rem 1rem;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .countdown {
+      font-size: 1.3rem;
+    }
+  
+    .magic-button {
+      font-size: 0.85rem;
+      padding: 8px 18px;
+    }
+  
+    .magic-logo {
+      width: 90px;
+      top: 25px;
+    }
+  
+    .completion-message h2 {
+      font-size: 1.3rem;
+    }
+  }
+  
