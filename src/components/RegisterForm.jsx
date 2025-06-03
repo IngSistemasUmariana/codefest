@@ -63,15 +63,10 @@ export default function RegisterForm() {
         return false;
       }
     } else if (step === 2) {
-      const { name, id, phone, email } = formData.teacher;
+      const { name, phone, email } = formData.teacher;
       if (!name.trim()) {
         setErrorField('teacherName');
         toast.error('❌ El nombre del docente es obligatorio');
-        return false;
-      }
-      if (!validateCedula(id)) {
-        setErrorField('teacherId');
-        toast.error('❌ La cédula del docente debe tener 10 dígitos');
         return false;
       }
       if (!validateCedula(phone)) {
