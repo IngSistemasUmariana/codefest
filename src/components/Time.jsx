@@ -10,7 +10,7 @@ export default function Time() {
 
   useEffect(() => {
     // FECHA: 8 de mayo, 23:59 hora Colombia (UTC-5) → UTC = 04:59 del 9 de mayo
-    const colombiaEndDateUTC = new Date(Date.UTC(2025, 6, 6, 4, 59, 0)); // ⚠️ Mes 4 = mayo (0-indexed)
+    const colombiaEndDateUTC = new Date(Date.UTC(2025, 5, 7, 5, 0, 0)); // ⚠️ Mes 4 = mayo (0-indexed)
 
     const interval = setInterval(() => {
       const nowUTC = new Date();
@@ -60,7 +60,7 @@ export default function Time() {
         <div className="timer-box">
         <h1 className="title">Cierre de Inscripciones</h1>
         <p className="countdown">{formatTime(timeLeft)}</p>
-        <p className="date-info">🕒 Las inscripciones cierran el <strong> 26 de mayo</strong> a las <strong>11:59 p.m.</strong> (hora Colombia).</p>
+        <p className="date-info">🕒 Las inscripciones cierran el <strong> 6 de junio</strong> a las <strong>11:59 p.m.</strong> (hora Colombia).</p>
         <button className="magic-button" onClick={() => navigate('/home')}>
             Ver más
         </button>
