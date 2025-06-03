@@ -23,7 +23,7 @@ export default function Navbar() {
       <nav className="nav-links">
         <a href="/home">Inicio</a>
         <a href="/codefest">Sobre Codefest</a>
-        <a href="/register">Inscricpiones</a>
+        <a href="/register">Inscripciones</a>
         <a href="/contact">Contacto</a>
       </nav>
       <button className="nav-button" onClick={() => navigate('/')}>
