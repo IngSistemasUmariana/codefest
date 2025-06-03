@@ -10,7 +10,7 @@ export default function Time() {
 
   useEffect(() => {
     // FECHA: 8 de mayo, 23:59 hora Colombia (UTC-5) → UTC = 04:59 del 9 de mayo
-    const colombiaEndDateUTC = new Date(Date.UTC(2025, 5, 3, 4, 59, 0)); // ⚠️ Mes 4 = mayo (0-indexed)
+    const colombiaEndDateUTC = new Date(Date.UTC(2025, 6, 6, 4, 59, 0)); // ⚠️ Mes 4 = mayo (0-indexed)
 
     const interval = setInterval(() => {
       const nowUTC = new Date();
