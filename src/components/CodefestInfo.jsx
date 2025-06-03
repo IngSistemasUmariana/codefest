@@ -25,7 +25,7 @@ export default function CodefestInfo() {
           <ul className="hero-details">
             <li>👥 Equipos conformados por 3 estudiantes + 1 docente responsable</li>
             <li>📍 Universidad Mariana, Bloque Maria Inmaculada Salones 601, 603 y 604 </li>
-            <li>📆 Fecha: 13 de Junio</li>
+            <li>📆 Fecha: 11 de Junio</li>
           </ul>
           <div className="hero-benefits">
             <div className="benefit-tag">🏅 Premios mágicos para los mejores equipos</div>
